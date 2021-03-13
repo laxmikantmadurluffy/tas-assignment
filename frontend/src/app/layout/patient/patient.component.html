@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Personal Info</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Name: {{ healthInfo['Personal info']['Name'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Email: {{ healthInfo['Personal info']['Email'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Phone: {{ healthInfo['Personal info']['Phone'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Age: {{ healthInfo['Personal info']['Age'] }} </h6>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="healthInfo['Medical Condition']" class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Medical Condition</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Heart Disease: 
+                        <span *ngIf="healthInfo['Medical Condition']['Heart Disease']">YES</span>
+                        <span *ngIf="!healthInfo['Medical Condition']['Heart Disease']">NO</span>
+                    </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Diabetics:
+                        <span *ngIf="healthInfo['Medical Condition']['Diabetics']">YES</span>
+                        <span *ngIf="!healthInfo['Medical Condition']['Diabetics']">NO</span>    
+                    </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Blood Pressure: 
+                        <span *ngIf="healthInfo['Medical Condition']['Blood Pressure']['High BP']">High BP</span>
+                        <span *ngIf="healthInfo['Medical Condition']['Blood Pressure']['Low BP']">Low BP</span> 
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Health Status</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Height: {{ healthInfo['Health Status']['Height'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Weight: {{ healthInfo['Health Status']['Weight'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Pulse Rate: {{ healthInfo['Health Status']['Pulse Rate'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">BP: {{ healthInfo['Health Status']['BP'] }} </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">BMI: {{ healthInfo['Health Status']['BMI'] }} </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
